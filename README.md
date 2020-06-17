@@ -40,13 +40,12 @@ $ export LLVM_CONFIG=/usr/bin/llvm-config-7
 Clone the repo and install 3rd-party libraries.
 
 ```bash
-$ git clone https://www.github.com/ildoonet/tf-pose-estimation
+$ git clone https://github.com/LawJarp-A/Anxiety_Detection.git
 $ cd tf-pose-estimation
 $ pip3 install -r requirements.txt
 ```
 
-Build c++ library for post processing. See : https://github.com/ildoonet/tf-pose-estimation/tree/master/tf_pose/pafprocess
-```
+Build c++ library for post processing. 
 $ cd tf_pose/pafprocess
 $ swig -python -c++ pafprocess.i && python3 setup.py build_ext --inplace
 ```
@@ -56,7 +55,7 @@ $ swig -python -c++ pafprocess.i && python3 setup.py build_ext --inplace
 After the above steps, install it as python package
 
 ```bash
-$ git clone https://www.github.com/ildoonet/tf-pose-estimation
+$ git clone https://github.com/LawJarp-A/Anxiety_Detection.git
 $ cd tf-pose-estimation
 $ python setup.py install  # Or, `pip install -e .`
 ```
