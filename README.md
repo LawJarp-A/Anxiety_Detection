@@ -1,4 +1,9 @@
 
+##Anxiety detection model
+
+This repo uses code from the original github repo-https://github.com/ildoonet/tf-pose-estimation.git
+The pose model estimation is used is the program to detect movement.
+
 ## Install
 
 ### Dependencies
@@ -6,7 +11,7 @@
 You need dependencies below.
 
 - python3
-- tensorflow 1.4.1+
+- tensorflow 1.4.1, (Not yet tf-2.0 compatible)
 - opencv3, protobuf, python3-tk
 - slidingwindow
   - https://github.com/adamrehn/slidingwindow
