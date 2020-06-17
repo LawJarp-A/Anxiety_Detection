@@ -1,8 +1,19 @@
 
-##Anxiety detection model
+## Anxiety detection model
 
 This repo uses code from the original github repo-https://github.com/ildoonet/tf-pose-estimation.git
 The pose model estimation is used is the program to detect movement.
+Further Anxiety and confidence score is based on the irregular movemnet of the candidate. Further models include trcaking eye movement and voice modulation to predict the Anxiety-Confidence score.
+
+## Progress uptil Now
+Score predictor using movement is being implemented
+
+## TO-DO
+1. Upgrade code to be compatible with tensorflow 2.0
+2. Add eye tracking module
+3. Add Voice modulation module
+4. Collect a good amount of datat to train on
+5. Improve speed and efficiency
 
 ## Install
 
@@ -42,7 +53,7 @@ $ swig -python -c++ pafprocess.i && python3 setup.py build_ext --inplace
 
 ### Package Install
 
-Alternatively, you can install this repo as a shared package using pip.
+After the above steps, install it as python package
 
 ```bash
 $ git clone https://www.github.com/ildoonet/tf-pose-estimation
@@ -50,20 +61,15 @@ $ cd tf-pose-estimation
 $ python setup.py install  # Or, `pip install -e .`
 ```
 
-### Download Tensorflow Graph File(pb file)
+### Usage of pose_model
 
-Before running demo, you should download graph files. You can deploy this graph on your mobile or other platforms.
+This model detects 6 keypoints of upper body
+Usage:
 
-- cmu (trained in 656x368)
-- mobilenet_thin (trained in 432x368)
-- mobilenet_v2_large (trained in 432x368)
-- mobilenet_v2_small (trained in 432x368)
-
-CMU's model graphs are too large for git, so I uploaded them on an external cloud. You should download them if you want to use cmu's original model. Download scripts are provided in the model folder.
-
+```bash
+import pose_model
+pose_model.get_points("Image path")
 ```
-$ cd models/graph/cmu
-$ bash download.sh
-```
+It returns a dictionary.
 
 
