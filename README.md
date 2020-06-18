@@ -1,13 +1,13 @@
-## Anxiety detection model
+# Anxiety detection model
 
 This repo uses code from the github repo-https://github.com/michalfaber/tensorflow_Realtime_Multi-Person_Pose_Estimation.git
 The pose model estimation is used is the program to detect movement.
 Further Anxiety and confidence score is based on the irregular movemnet of the candidate. Further models include trcaking eye movement and voice modulation to predict the Anxiety-Confidence score.
 
-## Progress uptil Now
+# Progress uptil Now
 Score predictor using movement is being implemented. For efficieny mobilenet model is being used
 
-## TO-DO
+# TO-DO
 1. Upgrade code to be compatible with tensorflow 2.0 [DONE]
 2. Add eye tracking module
 3. Add Voice modulation module
@@ -49,4 +49,14 @@ conda activate tf_pose_estimation_env
 bash requirements_conda.txt
 ```
 Note: These instructions are also available in the originl repo from which these models and code was borrowed and further trained on.
+# Usage
 
+**To find required keypoints on a image**
+In your python console or program, move to the Anxiety_Detection directory and 
+```bash
+import pose_model
+import cv2
+img = cv2.imread("Imagepath")
+keypoints_required = pose_model.get_points(img)
+```
+NOTE: The score predictor is yet to be updated.
