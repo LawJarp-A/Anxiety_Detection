@@ -1,69 +1,82 @@
+# Tensorflow 2.0 Realtime Multi-Person Pose Estimation
 
-##Anxiety detection model
+This repo contains a new upgraded version of the **keras_Realtime_Multi-Person_Pose_Estimation** project. It is ready for the new Tensorflow 2.0.
 
-This repo uses code from the original github repo-https://github.com/ildoonet/tf-pose-estimation.git
-The pose model estimation is used is the program to detect movement.
+I added a new model based on MobileNetV2 for mobile devices.
+You can train it from scratch in the same way as the CMU model. There is still room for performance improvement, like quantization training, which I will add as a next step.
 
-## Install
+[Download](https://www.dropbox.com/s/gif7s1qlie2xftd/best_pose_mobilenet_model.zip?dl=1) the model and checkpoints.
 
-### Dependencies
+I didn't change much the augmentation process as the tensorpack does a good job. The only changes I have made are in fetching samples to the model. I added the interface Dataset as recommended by Tensorflow.
 
-You need dependencies below.
+It is worth to mention that I purposely didn't use the Keras interface **model.compile, model.run** as I had problems with loss regularizers - I kept getting NaN after a few iterations. I suspect that the solution would be to add loss to the input tensor: *add_loss(tf.abs(tf.reduce_mean(x)))*. I will update the repo as soon as I get satisfactory results.
 
-- python3
-- tensorflow 1.4.1, (Not yet tf-2.0 compatible)
-- opencv3, protobuf, python3-tk
-- slidingwindow
-  - https://github.com/adamrehn/slidingwindow
-  - I copied from the above git repo to modify few things.
+I added a visualization of final heatmaps and pafs in the Tensorboard.
+Every 100 iterations, a single image is passed to the model. The predicted heatmaps and pafs are logged in the Tensorboard.
+You can check this visual representation of prediction every few minutes/hours as it gives a good sense of how the training performs.
 
-### Pre-Install Jetson case
+# Scripts and notebooks
+
+This project contains the following scripts and jupyter notebooks:
+
+**train_custom_loop.py** - training code for the CMU model. This is a new version of the training code from the old repo *keras_Realtime_Multi-Person_Pose_Estimation*. It has been upgraded to Tensorflow 2.0.
+
+**train_custom_loop_mobilenet.py** - training code for smaller model. It is based on the MobilenetV2. Simplified model with just 2 stages.
+
+**convert_to_tflite.py** - script used to create *TFLite* model based on checkpoint or keras h5 file.
+
+**dataset_inspect.ipynb** - helper notebook to get more insights into what is generated from the dataset.
+
+**test_pose_mobilenet.ipynb** - helper notebook to preview the predictions from the mobilenet-based model.
+
+**test_pose_vgg.ipynb** - helper notebook to preview the predictions from the original vgg-based model.
+
+**test_tflite_model.ipynb** - helper notebook to verify exported *TFLite* model.
+
+**estimation_example/** - This is an example demonstrating the estimation algorithm. Here you will find sample heatmaps and pafs dumped into numpy arrays (*.npy) and some scripts: *coordinates.py*, *connections.py*, *estimators.py* containing the code for each step of the estimation algorithm. You can run these scripts separately to better understand each step. In addition, there is the script: *example.py* that shows all the steps together. This script creates an output image with the connections.  
+
+# Installation
+
+## Prerequisites
+
+* download [dataset and annotations](http://cocodataset.org/#download) into a separate folder datasets, outside of this project:
+```bash
+    ├── datasets
+    │   └── coco_2017_dataset
+    │       ├── annotations
+    │       │   ├── person_keypoints_train2017.json
+    │       │   └── person_keypoints_val2017.json
+    │       ├── train2017/*
+    │       └── val2017/*
+    └── tensorflow_Realtime_Multi-Person_Pose_Estimation/*
+```                
+* install [CUDNN](https://developer.nvidia.com/cudnn) and [CUDA](https://developer.nvidia.com/cuda-downloads)
+
+    If you use Anaconda, there is a simpler way. Just install the precompiled libs:
+```bash    
+    conda install -c anaconda cudatoolkit==10.0.130-0
+```
+
+## How to install (with tensorflow-gpu)
+
+
+**Virtualenv**
 
 ```bash
-$ sudo apt-get install libllvm-7-ocaml-dev libllvm7 llvm-7 llvm-7-dev llvm-7-doc llvm-7-examples llvm-7-runtime
-$ export LLVM_CONFIG=/usr/bin/llvm-config-7 
+pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+# ...or
+pip install -r requirements_all.txt # completely frozen environment with all dependent libraries
 ```
 
-### Install
-
-Clone the repo and install 3rd-party libraries.
+**Anaconda**
 
 ```bash
-$ git clone https://www.github.com/ildoonet/tf-pose-estimation
-$ cd tf-pose-estimation
-$ pip3 install -r requirements.txt
+conda create --name tf_pose_estimation_env
+conda activate tf_pose_estimation_env
+
+bash requirements_conda.txt
 ```
-
-Build c++ library for post processing. See : https://github.com/ildoonet/tf-pose-estimation/tree/master/tf_pose/pafprocess
-```
-$ cd tf_pose/pafprocess
-$ swig -python -c++ pafprocess.i && python3 setup.py build_ext --inplace
-```
-
-### Package Install
-
-Alternatively, you can install this repo as a shared package using pip.
-
-```bash
-$ git clone https://www.github.com/ildoonet/tf-pose-estimation
-$ cd tf-pose-estimation
-$ python setup.py install  # Or, `pip install -e .`
-```
-
-### Download Tensorflow Graph File(pb file)
-
-Before running demo, you should download graph files. You can deploy this graph on your mobile or other platforms.
-
-- cmu (trained in 656x368)
-- mobilenet_thin (trained in 432x368)
-- mobilenet_v2_large (trained in 432x368)
-- mobilenet_v2_small (trained in 432x368)
-
-CMU's model graphs are too large for git, so I uploaded them on an external cloud. You should download them if you want to use cmu's original model. Download scripts are provided in the model folder.
-
-```
-$ cd models/graph/cmu
-$ bash download.sh
-```
-
-
