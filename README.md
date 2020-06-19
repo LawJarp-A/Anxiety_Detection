@@ -3,6 +3,7 @@
 This repo uses code from the github repo-https://github.com/michalfaber/tensorflow_Realtime_Multi-Person_Pose_Estimation.git
 The pose model estimation is used is the program to detect movement.
 Further Anxiety and confidence score is based on the irregular movemnet of the candidate. Further models include trcaking eye movement and voice modulation to predict the Anxiety-Confidence score.
+**Two machine learning models are used** to predict eye movement and predicts keypoinst on upper body. These data will be used to calculate the Anxiety/Confidence score.
 NOTE: We are using a mathematical aproach to get the score as we have not yet collected enough credible data to train a model to do it.
 
 # Progress uptil Now
