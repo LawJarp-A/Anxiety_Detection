@@ -63,9 +63,9 @@ NOTE: The score predictor is yet to be updated.
 
 
 
-#Score prediction algorithm:
+# Score prediction algorithm:
 
-Eye Motion score prediction:
+**Eye Motion score prediction:**
 
 1. Normalize (between zero and 1) avoiding eye contact (in this case, looking straight/center) for 15-60 (Subject to change) seconds.
 
@@ -81,7 +81,7 @@ Eye Motion score prediction:
 4. DO not assign 0 or 1 in any case
 
 
-Pose based score estimation:
+**Pose based score estimation:**
 
 1.  Shoulders : 
                    Almost no movement to - 2           0.7-0.9 (Stiff shoulders =  reduced 
