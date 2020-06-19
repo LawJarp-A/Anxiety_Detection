@@ -60,3 +60,44 @@ img = cv2.imread("Imagepath")
 keypoints_required = pose_model.get_points(img)
 ```
 NOTE: The score predictor is yet to be updated.
+
+
+
+#Score prediction algorithm:
+
+Eye Motion score prediction:
+
+1. Normalize (between zero and 1) avoiding eye contact (in this case, looking straight/center) for 15-60 (Subject to change) seconds.
+
+2. Measure changes in position of the eye in 1 second time interval. Assign score as table below if possible:
+                 <70 times per second                       0.2 (or as low as possible)
+                   70-100 times per second                0.4 - 0.6   (This is perfectly normal 
+                                                                                movement of eye)
+                   >100 times per second                   0.7 - 0.9                
+
+3. Measure changes in position of the eye in 1 second time interval. Assign score as table below if possible:
+                 Statistical approach, Deviation from central axis, refer sumukh
+
+4. DO not assign 0 or 1 in any case
+
+
+Pose based score estimation:
+
+1.  Shoulders : 
+                   Almost no movement to - 2           0.7-0.9 (Stiff shoulders =  reduced 
+                     times a minute,                                             response)
+                     
+2. Elbows :
+                    
+                          Currently Indeterminate. No Co-relation
+
+3. Wrist :
+                  Constant movement (tapping)           0.6 - 0.9
+                   >100                                                  0.9
+                   >80 and <100                                    0.8
+                   >40 and <80                                      0.4 - 0.7
+                   <40                                                    0.2- 0.4
+
+
+
+(*note- the distributions are not made even intentionally)
