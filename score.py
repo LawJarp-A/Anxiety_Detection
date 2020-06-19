@@ -6,8 +6,12 @@ def norm(k):
     k = k/(math.sqrt(2)*224)
     return k
 
-
-cap = cv2.VideoCapture('vid.avi')
+filename = input("Enter path of video")
+try:
+    cap = cv2.VideoCapture(filename)
+except:
+    print("not able to read video")
+    exit(0)
 fps = math.ceil(cap.get(cv2.CAP_PROP_FPS))
 
 i = 0
