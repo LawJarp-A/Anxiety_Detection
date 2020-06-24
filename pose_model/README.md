@@ -1,4 +1,4 @@
-# Anxiety detection model
+# POSE model
 
 This repo uses code from the github repo-https://github.com/michalfaber/tensorflow_Realtime_Multi-Person_Pose_Estimation.git
 The pose model estimation is used is the program to detect movement.
@@ -9,12 +9,6 @@ NOTE: We are using a mathematical aproach to get the score as we have not yet co
 # Progress uptil Now
 Score predictor using movement is being implemented. For efficieny mobilenet model is being used
 
-# TO-DO
-1. Upgrade code to be compatible with tensorflow 2.0 [DONE]
-2. Add eye tracking module
-3. Add Voice modulation module
-4. Collect a good amount of datat to train on
-5. Improve speed and efficiency
 
 # Pre-requisites
 
@@ -69,21 +63,6 @@ Output is a list of scores based on contonuos movements such as tapping or shaki
 
 
 # Score prediction algorithm:
-
-**Eye Motion score prediction:**
-
-1. Normalize (between zero and 1) avoiding eye contact (in this case, looking straight/center) for 15-60 (Subject to change) seconds.
-
-2. Measure changes in position of the eye in 1 second time interval. Assign score as table below if possible:
-                 <70 times per second                       0.2 (or as low as possible)
-                   70-100 times per second                0.4 - 0.6   (This is perfectly normal 
-                                                                                movement of eye)
-                   >100 times per second                   0.7 - 0.9                
-
-3. Measure changes in position of the eye in 1 second time interval. Assign score as table below if possible:
-                 Statistical approach, Deviation from central axis, refer sumukh
-
-4. DO not assign 0 or 1 in any case
 
 
 **Pose based score estimation:**
