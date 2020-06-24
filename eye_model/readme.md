@@ -1,4 +1,4 @@
-#EYE-TRACKING Model:
+# EYE-TRACKING Model:
 
 The primary model of eye gaze is due to the courtesy of https://github.com/antoinelame/GazeTracking
 
