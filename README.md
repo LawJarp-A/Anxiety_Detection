@@ -20,7 +20,7 @@ Score predictor using movement is being implemented. For efficieny mobilenet mod
 # Pre-requisites
 
 You need to have tensorflow 2.0+ installed. And the dependencies listed in the requirments.txt
-[Download](https://www.dropbox.com/s/gif7s1qlie2xftd/best_pose_mobilenet_model.zip?dl=1) the model and copy the weights.best.mobilenet.h5 file to the master directory of this repo.
+[Download](https://www.dropbox.com/s/gif7s1qlie2xftd/best_pose_mobilenet_model.zip?dl=1) the model and copy the weights.best.mobilenet.h5 file to the folder.
 * install [CUDNN](https://developer.nvidia.com/cudnn) and [CUDA](https://developer.nvidia.com/cuda-downloads)
 
     If you use Anaconda, there is a simpler way. Just install the precompiled libs:
