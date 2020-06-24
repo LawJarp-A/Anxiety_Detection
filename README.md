@@ -16,6 +16,7 @@ Score predictor using movement is being implemented. For efficieny mobilenet mod
 4. Collect a good amount of datat to train on
 5. Improve speed and efficiency
 
+# 1)POSE MODEL:
 # Pre-requisites
 
 You need to have tensorflow 2.0+ installed. And the dependencies listed in the requirments.txt
@@ -88,7 +89,7 @@ Output is a list of scores based on contonuos movements such as tapping or shaki
                    <40                                                    0.2- 0.4
 
 
-# Eye tracking:
+# 2)EYE-TRACKING Model:
 
 The primary model of eye gaze is due to the courtesy of https://github.com/antoinelame/GazeTracking
 
