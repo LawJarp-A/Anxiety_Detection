@@ -96,7 +96,7 @@ The primary model of eye gaze is due to the courtesy of https://github.com/antoi
 Follow the following steps to run the program:
 
 1. pip install -r requirements.txt.
-NOTE:If some problem arises installing dlib, use dlib-19.19.0.tar.gz(in the primary page of this repo) and refer https://www.youtube.com/watch?v=pHrgi8QLcKk&feature=youtu.be (in windows 10) 
+NOTE:If some problem arises installing dlib, use dlib-19.19.0.tar.gz(in the ey_moedl folder) and refer https://www.youtube.com/watch?v=pHrgi8QLcKk&feature=youtu.be (in windows 10) 
 or refer to https://www.pyimagesearch.com/2017/03/27/how-to-install-dlib/
 
 2. Run the python file 'run_this.py' to get input from the webcam.For a video input , change the 0 in run_this.py to the videoname.mp4,
