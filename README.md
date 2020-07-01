@@ -82,11 +82,11 @@ Output is a list of scores based on contonuos movements such as tapping or shaki
                           Currently Indeterminate. No Co-relation
 
 3. Wrist :
-                  Constant movement (tapping)           0.6 - 0.9
-                   >100                                                  0.9
-                   >80 and <100                                    0.8
-                   >40 and <80                                      0.4 - 0.7
-                   <40                                                    0.2- 0.4
+                  Constant movement (tapping)                 0.6 - 0.9
+                   >100                                       0.9
+                   >80 and <100                               0.8
+                   >40 and <80                                0.4 - 0.7
+                   <40                                        0.2- 0.4
 
 
 # 2)EYE-TRACKING Model:
