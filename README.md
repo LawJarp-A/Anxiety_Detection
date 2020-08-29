@@ -5,11 +5,6 @@ Further Anxiety and confidence score is based on the irregular movemnet of the c
 **Two machine learning models are used** to predict eye movement and predicts keypoinst on upper body. These data will be used to calculate the Anxiety/Confidence score.
 NOTE: We are using a mathematical aproach to get the score as we have not yet collected enough credible data to train a model to do it.
 
-# Members
-Prajwal Anagani (https://github.com/LawJarp-A)
-Bhuvan Hawargi  (https://github.com/bhawargi)
-Sumukh Raju Bhatt (https://github.com/sumukhbhat2701)
-Saileshwar Karthik
 # Progress uptil Now
 Score predictor using movement is being implemented. For efficieny mobilenet model is being used
 
