@@ -6,10 +6,10 @@ Further Anxiety and confidence score is based on the irregular movemnet of the c
 NOTE: We are using a mathematical aproach to get the score as we have not yet collected enough credible data to train a model to do it.
 
 # Members
-Prajwal Anagani (https://github.com/LawJarp-A)
-Bhuvan Hawargi  (https://github.com/bhawargi)
-Sumukh Raju Bhatt (https://github.com/sumukhbhat2701)
-Saileshwar Karthik
+1. Prajwal Anagani (https://github.com/LawJarp-A)
+2. Bhuvan Hawargi  (https://github.com/bhawargi)
+3. Sumukh Raju Bhatt (https://github.com/sumukhbhat2701)
+4. Saileshwar Karthik
 # Progress uptil Now
 Score predictor using movement is being implemented. For efficieny mobilenet model is being used
 
