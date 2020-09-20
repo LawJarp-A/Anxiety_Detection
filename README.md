@@ -78,19 +78,19 @@ Output is a list of scores based on contonuos movements such as tapping or shaki
 **Pose based score estimation:**
 
 1.  Shoulders : 
-                   Almost no movement to - 2           0.7-0.9 (Stiff shoulders =  reduced 
-                     times a minute,                                             response)
+                   Almost no movement to - 2               0.7-0.9 (Stiff shoulders =  reduced response)
+                     times a minute,                                             
                      
 2. Elbows :
                     
                           Currently Indeterminate. No Co-relation
 
 3. Wrist :
-                  Constant movement (tapping)           0.6 - 0.9
-                   >100                                                  0.9
-                   >80 and <100                                    0.8
-                   >40 and <80                                      0.4 - 0.7
-                   <40                                                    0.2- 0.4
+                   Constant movement (tapping)               0.6 - 0.9
+                   >100                                      0.9
+                   >80 and <100                              0.8
+                   >40 and <80                               0.4 - 0.7
+                   <40                                       0.2- 0.4
 
 
 # 2)EYE-TRACKING Model:
