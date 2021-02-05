@@ -5,7 +5,7 @@ Further Anxiety and confidence score is based on the irregular movemnet of the c
 **Two machine learning models are used** to predict eye movement and predicts keypoinst on upper body. These data will be used to calculate the Anxiety/Confidence score.
 NOTE: We are using a mathematical aproach to get the score as we have not yet collected enough credible data to train a model to do it.
 
-# Members
+## Members
 1. Prajwal Anagani (https://github.com/LawJarp-A)
 2. Bhuvan Hawargi  (https://github.com/bhawargi)
 3. Sumukh Raju Bhatt (https://github.com/sumukhbhat2701)
@@ -13,15 +13,15 @@ NOTE: We are using a mathematical aproach to get the score as we have not yet co
 # Progress uptil Now
 Score predictor using movement is being implemented. For efficieny mobilenet model is being used
 
-# TO-DO
+## TO-DO
 1. Upgrade code to be compatible with tensorflow 2.0 [DONE]
 2. Add eye tracking module [DONE]
 3. Add Voice modulation module
 4. Collect a good amount of datat to train on
 5. Improve speed and efficiency
 
-# 1)POSE MODEL:
-# Pre-requisites
+# 1)Pose Model:
+## Pre-requisites
 
 You need to have tensorflow 2.0+ installed. And the dependencies listed in the requirments.txt
 [Download](https://www.dropbox.com/s/gif7s1qlie2xftd/best_pose_mobilenet_model.zip?dl=1) the model and copy the weights.best.mobilenet.h5 file to the folder.
@@ -73,7 +73,7 @@ Run the score.py and enter the path of the video when prompted.
 Output is a list of scores based on contonuos movements such as tapping or shaking of elbows. Futher improvements are due.
 
 
-# Score prediction algorithm:
+## Score prediction algorithm:
 
 **Pose based score estimation:**
 
@@ -93,7 +93,7 @@ Output is a list of scores based on contonuos movements such as tapping or shaki
                    <40                                       0.2- 0.4
 
 
-# 2)EYE-TRACKING Model:
+# 2)Eye-tracking Model:
 
 The primary model of eye gaze is due to the courtesy of https://github.com/antoinelame/GazeTracking
 
