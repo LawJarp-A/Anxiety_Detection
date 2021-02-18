@@ -11,7 +11,8 @@ NOTE: We are using a mathematical aproach to get the score as we have not yet co
 3. Sumukh Raju Bhatt (https://github.com/sumukhbhat2701)
 4. Saileshwar Karthik
 # Progress uptil Now
-Score predictor using movement is being implemented. For efficieny mobilenet model is being used
+Score prediction implemented (pose+eye) . For efficieny mobilenet model is being used.
+Audio Analysis Module is under work.
 
 ## TO-DO
 1. Upgrade code to be compatible with tensorflow 2.0 [DONE]
